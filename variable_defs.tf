@@ -23,6 +23,11 @@ variable "secondary_zones" {
   default = ["us-east4-c","us-east4-b","us-east4-a"]
 }
 
+variable "source_machine_image" {
+  type = string
+  default = "projects/nyc3-dev-sbx-syslog/global/machineImages/slng-sbx-machine-image"
+} 
+
 variable "vpc_network" {
   type = string
   default = "nyc3-dev-sbx-vpc"
