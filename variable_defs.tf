@@ -1,6 +1,11 @@
-variable "project_id" {
+variable "syslog_project_id" {
   type = string
-  default = "nyc3-dev-sbx-syslog"
+  default = "nyc3-dev-eds-avalon"
+}
+
+variable "network_project_id" {
+  type = string
+  default = "nyc3-dev-hostnetwork"
 }
 
 variable "primary_region" {
@@ -24,6 +29,11 @@ variable "secondary_zones" {
 }
 
 variable "source_machine_image" {
+  type = string
+  default = "projects/nyc3-dev-sbx-syslog/global/machineImages/slng-sbx-machine-image"
+} 
+
+variable "lb_disk_image" {
   type = string
   default = "projects/nyc3-dev-sbx-syslog/global/machineImages/slng-sbx-machine-image"
 } 
