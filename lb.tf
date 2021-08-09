@@ -13,7 +13,7 @@ resource "google_compute_instance" "nyc3_dev_avi_lb" {
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "projects/nyc3-dev-eds-avalon/global/images/avi-controller"
     }
   }
 
