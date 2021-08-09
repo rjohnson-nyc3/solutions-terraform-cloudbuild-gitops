@@ -2,7 +2,6 @@
 
 resource "google_compute_instance" "nyc3_dev_avi_lb" {
 
-//TODO: Add project info here:
   project      = var.network_project_id
   name         = "nyc3-dev-avi-lb"
   machine_type = "e2-highmem-8"
