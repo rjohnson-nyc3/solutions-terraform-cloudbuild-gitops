@@ -1,14 +1,15 @@
 # Load Balancer
 
 resource "google_compute_instance" "nyc3_dev_avi_lb" {
-
+  
+  //FIXME: Probably should remove this at some point.
+  allow_stopping_for_update = true
   project      = var.network_project_id
   name         = "nyc3-dev-avi-lb"
   machine_type = "e2-highmem-8"
   zone         = var.primary_zones.0
 
-//FIXME: Add correct tags for traffic to be allowed.
-  # tags = ["foo", "bar"]
+  tags = ["avi-controller"]
 
   boot_disk {
     initialize_params {
@@ -23,7 +24,7 @@ resource "google_compute_instance" "nyc3_dev_avi_lb" {
 
 //TODO: Make sure this is the correct vpc
   network_interface {
-    network = "nyc3-east1"
+    subnetwork = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/net-10-139-255-197bm27"
 
     # access_config {
     #   // Ephemeral IP
@@ -39,7 +40,7 @@ resource "google_compute_instance" "nyc3_dev_avi_lb" {
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-    email  = var.service_account
+    email  = var.lb_service_account
     scopes = ["cloud-platform"]
   }
 }

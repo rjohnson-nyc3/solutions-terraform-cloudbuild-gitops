@@ -30,7 +30,8 @@ variable "secondary_zones" {
 
 variable "source_machine_image" {
   type = string
-  default = "projects/nyc3-dev-sbx-syslog/global/machineImages/slng-sbx-machine-image"
+  # default = "projects/nyc3-dev-sbx-syslog/global/machineImages/slng-sbx-machine-image"
+  default = "projects/nyc3-dev-eds-avalon/global/machineImages/slng-vpc-east4-1"
 } 
 
 variable "lb_disk_image" {
@@ -56,6 +57,11 @@ variable "vpc_subnet_range" {
 variable "service_account" {
   type = string
   default = "terraform@nyc3-dev-sbx-syslog.iam.gserviceaccount.com"
+}
+
+variable "lb_service_account" {
+  type = string
+  default = "avi-dev-service-account@nyc3-dev-hostnetwork.iam.gserviceaccount.com"
 }
 
 variable "num_instances" {

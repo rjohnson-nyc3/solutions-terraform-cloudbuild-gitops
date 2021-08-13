@@ -5,9 +5,9 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_tcp1" {
   zone     = var.primary_zones.0
 
   //fixme: make all network changes necessary
-  # network_interface {
-  #   subnetwork = google_compute_subnetwork.nyc3_dev_sbx_subnet.self_link
-  # }
+  network_interface {
+    subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
+  }
   source_machine_image = var.source_machine_image
   
   //TODO: add correct tags for traffic flow
@@ -29,9 +29,9 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_tcp1" {
   provider = google-beta
   name     = "slng-dev-east1-zb-tcp1"
   zone     = var.primary_zones.1
-  # network_interface {
-  #   subnetwork = google_compute_subnetwork.nyc3_dev_sbx_subnet.self_link
-  # }
+  network_interface {
+    subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
+  }
   source_machine_image = var.source_machine_image
   tags          = ["slng"]
 }
@@ -51,9 +51,9 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_tcp1" {
   provider = google-beta
   name     = "slng-dev-east1-zc-tcp1"
   zone     = var.primary_zones.2
-  # network_interface {
-  #   subnetwork = google_compute_subnetwork.nyc3_dev_sbx_subnet.self_link
-  # }
+  network_interface {
+    subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
+  }
   source_machine_image = var.source_machine_image
   tags          = ["slng"]
 }
@@ -76,9 +76,9 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_udp1" {
   provider = google-beta
   name     = "slng-dev-east1-za-udp1"
   zone     = var.primary_zones.0
-  # network_interface {
-  #   subnetwork = google_compute_subnetwork.nyc3_dev_sbx_subnet.self_link
-  # }
+  network_interface {
+    subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
+  }
   source_machine_image = var.source_machine_image
   tags          = ["slng"]
 }
@@ -98,9 +98,9 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_udp1" {
   provider = google-beta
   name     = "slng-dev-east1-zb-udp1"
   zone     = var.primary_zones.1
-  # network_interface {
-  #   subnetwork = google_compute_subnetwork.nyc3_dev_sbx_subnet.self_link
-  # }
+  network_interface {
+    subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
+  }
   source_machine_image = var.source_machine_image
   tags          = ["slng"]
 }
@@ -120,9 +120,9 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_udp1" {
   provider = google-beta
   name     = "slng-dev-east1-zc-udp1"
   zone     = var.primary_zones.2
-  # network_interface {
-  #   subnetwork = google_compute_subnetwork.nyc3_dev_sbx_subnet.self_link
-  # }
+  network_interface {
+    subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
+  }
   source_machine_image = var.source_machine_image
   tags          = ["slng"]
 }
