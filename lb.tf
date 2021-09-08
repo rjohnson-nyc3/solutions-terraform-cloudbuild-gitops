@@ -25,7 +25,7 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_1" {
 
 //TODO: Make sure this is the correct vpc
   network_interface {
-    subnetwork = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/nyc3-dev-avi-vpc-subnet"
+    subnetwork = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/net-10-10-100-0-24"
 
     access_config {
       network_tier = "PREMIUM"
@@ -72,7 +72,7 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_2" {
 
 //TODO: Make sure this is the correct vpc
   network_interface {
-    subnetwork = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/nyc3-dev-avi-vpc-subnet"
+    subnetwork = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/net-10-10-100-0-24"
 
     access_config {
       network_tier = "PREMIUM"
@@ -119,7 +119,7 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_3" {
 
 //TODO: Make sure this is the correct vpc
   network_interface {
-    subnetwork = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/nyc3-dev-avi-vpc-subnet"
+    subnetwork = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/net-10-10-100-0-24"
 
     access_config {
       network_tier = "PREMIUM"
