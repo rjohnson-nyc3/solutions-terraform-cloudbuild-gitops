@@ -1,4 +1,28 @@
 # Load Balancer3
+resource "google_compute_address" "nyc3_dev_avi_internal_static_ip_1" {
+  name         = "nyc3-dev-avi-internal-static-ip-1"
+  project      = var.network_project_id
+  subnetwork   = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/net-10-10-100-0-24"
+  address_type = "INTERNAL"
+  address      = "10.10.100.11"
+  region       = var.primary_region
+}
+resource "google_compute_address" "nyc3_dev_avi_internal_static_ip_2" {
+  name         = "nyc3-dev-avi-internal-static-ip-2"
+  project      = var.network_project_id
+  subnetwork   = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/net-10-10-100-0-24"
+  address_type = "INTERNAL"
+  address      = "10.10.100.12"
+  region       = var.primary_region
+}
+resource "google_compute_address" "nyc3_dev_avi_internal_static_ip_3" {
+  name         = "nyc3-dev-avi-internal-static-ip-3"
+  project      = var.network_project_id
+  subnetwork   = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/net-10-10-100-0-24"
+  address_type = "INTERNAL"
+  address      = "10.10.100.13"
+  region       = var.primary_region
+}
 
 resource "google_compute_instance" "nyc3_dev_avi_lb_controller_1" {
   
@@ -26,10 +50,7 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_1" {
 //TODO: Make sure this is the correct vpc
   network_interface {
     subnetwork = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/net-10-10-100-0-24"
-
-    access_config {
-      network_tier = "PREMIUM"
-    }
+    network_ip = google_compute_address.nyc3_dev_avi_internal_static_ip_1.address
   }
 
   # metadata = {
@@ -73,10 +94,7 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_2" {
 //TODO: Make sure this is the correct vpc
   network_interface {
     subnetwork = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/net-10-10-100-0-24"
-
-    access_config {
-      network_tier = "PREMIUM"
-    }
+    network_ip = google_compute_address.nyc3_dev_avi_internal_static_ip_2.address
   }
 
   # metadata = {
@@ -120,10 +138,7 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_3" {
 //TODO: Make sure this is the correct vpc
   network_interface {
     subnetwork = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/net-10-10-100-0-24"
-
-    access_config {
-      network_tier = "PREMIUM"
-    }
+    network_ip = google_compute_address.nyc3_dev_avi_internal_static_ip_3.address
   }
 
   # metadata = {
