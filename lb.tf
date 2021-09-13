@@ -47,7 +47,6 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_1" {
   #   interface = "SCSI"
   # }
 
-//TODO: Make sure this is the correct vpc
   network_interface {
     subnetwork = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/net-10-10-100-0-24"
     network_ip = google_compute_address.nyc3_dev_avi_internal_static_ip_1.address
@@ -91,7 +90,6 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_2" {
   #   interface = "SCSI"
   # }
 
-//TODO: Make sure this is the correct vpc
   network_interface {
     subnetwork = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/net-10-10-100-0-24"
     network_ip = google_compute_address.nyc3_dev_avi_internal_static_ip_2.address
@@ -135,7 +133,6 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_3" {
   #   interface = "SCSI"
   # }
 
-//TODO: Make sure this is the correct vpc
   network_interface {
     subnetwork = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/net-10-10-100-0-24"
     network_ip = google_compute_address.nyc3_dev_avi_internal_static_ip_3.address
