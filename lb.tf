@@ -1,20 +1,20 @@
 # Load Balancers
 
 resource "google_compute_instance" "nyc3_dev_avi_lb_controller_1" {
-  
+
   //FIXME: Probably should remove this at some point.
   allow_stopping_for_update = true
-  project      = var.network_project_id
-  name         = "nyc3-dev-avi-lb-controller-1"
-  machine_type = "e2-highmem-8"
-  zone         = var.primary_zones.0
+  project                   = var.network_project_id
+  name                      = "nyc3-dev-avi-lb-controller-1"
+  machine_type              = "e2-highmem-8"
+  zone                      = var.primary_zones.0
 
   tags = ["avi-controller"]
 
   boot_disk {
     initialize_params {
-      image = "projects/nyc3-dev-eds-avalon/global/images/avi-controller"
-      size = 128
+      image = "projects/nyc3-dev-sbx-syslog/global/images/avi-controller-21-1-1"
+      size  = 128
     }
   }
 
@@ -32,8 +32,7 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_1" {
   #   foo = "bar"
   # }
 
-//TODO: Add correct startup script to configure machine.
-  # metadata_startup_script = "echo hi > /test.txt"
+  metadata_startup_script = "echo hi > /test.txt"
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
@@ -44,20 +43,20 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_1" {
 
 
 resource "google_compute_instance" "nyc3_dev_avi_lb_controller_2" {
-  
+
   //FIXME: Probably should remove this at some point.
   allow_stopping_for_update = true
-  project      = var.network_project_id
-  name         = "nyc3-dev-avi-lb-controller-2"
-  machine_type = "e2-highmem-8"
-  zone         = var.primary_zones.0
+  project                   = var.network_project_id
+  name                      = "nyc3-dev-avi-lb-controller-2"
+  machine_type              = "e2-highmem-8"
+  zone                      = var.primary_zones.0
 
   tags = ["avi-controller"]
 
   boot_disk {
     initialize_params {
-      image = "projects/nyc3-dev-eds-avalon/global/images/avi-controller"
-      size = 128
+      image = "projects/nyc3-dev-sbx-syslog/global/images/avi-controller-21-1-1"
+      size  = 128
     }
   }
 
@@ -75,8 +74,7 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_2" {
   #   foo = "bar"
   # }
 
-//TODO: Add correct startup script to configure machine.
-  # metadata_startup_script = "echo hi > /test.txt"
+  metadata_startup_script = "echo hi > /test.txt"
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
@@ -87,20 +85,20 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_2" {
 
 
 resource "google_compute_instance" "nyc3_dev_avi_lb_controller_3" {
-  
+
   //FIXME: Probably should remove this at some point.
   allow_stopping_for_update = true
-  project      = var.network_project_id
-  name         = "nyc3-dev-avi-lb-controller-3"
-  machine_type = "e2-highmem-8"
-  zone         = var.primary_zones.0
+  project                   = var.network_project_id
+  name                      = "nyc3-dev-avi-lb-controller-3"
+  machine_type              = "e2-highmem-8"
+  zone                      = var.primary_zones.0
 
   tags = ["avi-controller"]
 
   boot_disk {
     initialize_params {
-      image = "projects/nyc3-dev-eds-avalon/global/images/avi-controller"
-      size = 128
+      image = "projects/nyc3-dev-sbx-syslog/global/images/avi-controller-21-1-1"
+      size  = 128
     }
   }
 
@@ -118,8 +116,7 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_3" {
   #   foo = "bar"
   # }
 
-//TODO: Add correct startup script to configure machine.
-  # metadata_startup_script = "echo hi > /test.txt"
+  metadata_startup_script = "echo hi > /test.txt"
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.

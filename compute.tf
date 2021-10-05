@@ -9,9 +9,9 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_tcp1" {
     subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
   }
   source_machine_image = var.source_machine_image
-  
+
   //TODO: add correct tags for traffic flow
-  tags          = ["slng"]
+  tags = ["slng"]
 }
 
 # resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_tcp2" {
@@ -33,7 +33,7 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_tcp1" {
     subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
   }
   source_machine_image = var.source_machine_image
-  tags          = ["slng"]
+  tags                 = ["slng"]
 }
 
 # resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_tcp2" {
@@ -55,7 +55,7 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_tcp1" {
     subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
   }
   source_machine_image = var.source_machine_image
-  tags          = ["slng"]
+  tags                 = ["slng"]
 }
 
 # resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_tcp2" {
@@ -80,7 +80,7 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_udp1" {
     subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
   }
   source_machine_image = var.source_machine_image
-  tags          = ["slng"]
+  tags                 = ["slng"]
 }
 
 # resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_udp2" {
@@ -102,7 +102,7 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_udp1" {
     subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
   }
   source_machine_image = var.source_machine_image
-  tags          = ["slng"]
+  tags                 = ["slng"]
 }
 
 # resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_udp2" {
@@ -124,7 +124,7 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_udp1" {
     subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
   }
   source_machine_image = var.source_machine_image
-  tags          = ["slng"]
+  tags                 = ["slng"]
 }
 
 # resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_udp2" {

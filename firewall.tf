@@ -47,7 +47,7 @@
 #     protocol = "udp"
 #     ports    = ["514"]
 #   }
-  
+
 #   allow {
 #     protocol = "icmp"
 #   }
