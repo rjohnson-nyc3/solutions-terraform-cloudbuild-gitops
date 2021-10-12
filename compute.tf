@@ -1,139 +1,163 @@
-// TCP Blocks:
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_tcp1" {
+//////////////
+// east 1 Syslog Servers
+//////////////
+
+resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_1_e1" {
   provider = google-beta
-  name     = "slng-dev-east1-za-tcp1"
+  name     = "slng-prod-za-1-e1"
   zone     = var.primary_zones.0
 
-  //fixme: make all network changes necessary
   network_interface {
-    subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
-  }
-  source_machine_image = var.source_machine_image
-
-  //TODO: add correct tags for traffic flow
-  tags = ["slng"]
-}
-
-# resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_tcp2" {
-#   provider = google-beta
-#   name     = "slng-dev-east1-za-tcp2"
-#   zone     = var.primary_zones.0
-#   # network_interface {
-#   #   subnetwork = google_compute_subnetwork.nyc3_dev_sbx_subnet.self_link
-#   # }
-#   source_machine_image = var.source_machine_image
-#   tags          = ["slng"]
-# }
-
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_tcp1" {
-  provider = google-beta
-  name     = "slng-dev-east1-zb-tcp1"
-  zone     = var.primary_zones.1
-  network_interface {
-    subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
+    network_ip = google_compute_address.nyc3_prod_slng_1_e1.address
+    subnetwork = var.syslog_vpc_subnet_self_link_e1
   }
   source_machine_image = var.source_machine_image
   tags                 = ["slng"]
 }
 
-# resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_tcp2" {
-#   provider = google-beta
-#   name     = "slng-dev-east1-zb-tcp2"
-#   zone     = var.primary_zones.1
-#   # network_interface {
-#   #   subnetwork = google_compute_subnetwork.nyc3_dev_sbx_subnet.self_link
-#   # }
-#   source_machine_image = var.source_machine_image
-#   tags          = ["slng"]
-# }
-
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_tcp1" {
+resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_2_e1" {
   provider = google-beta
-  name     = "slng-dev-east1-zc-tcp1"
-  zone     = var.primary_zones.2
-  network_interface {
-    subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
-  }
-  source_machine_image = var.source_machine_image
-  tags                 = ["slng"]
-}
-
-# resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_tcp2" {
-#   provider = google-beta
-#   name     = "slng-dev-east1-zc-tcp2"
-#   zone     = var.primary_zones.2
-#   # network_interface {
-#   #   subnetwork = google_compute_subnetwork.nyc3_dev_sbx_subnet.self_link
-#   # }
-#   source_machine_image = var.source_machine_image
-#   tags          = ["slng"]
-# }
-
-###################
-// UDP Blocks: 
-
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_udp1" {
-  provider = google-beta
-  name     = "slng-dev-east1-za-udp1"
+  name     = "slng-prod-za-2-e1"
   zone     = var.primary_zones.0
+
   network_interface {
-    subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
+    network_ip = google_compute_address.nyc3_prod_slng_2_e1.address
+    subnetwork = var.syslog_vpc_subnet_self_link_e1
   }
   source_machine_image = var.source_machine_image
   tags                 = ["slng"]
 }
 
-# resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_udp2" {
-#   provider = google-beta
-#   name     = "slng-dev-east1-za-udp2"
-#   zone     = var.primary_zones.0
-#   # network_interface {
-#   #   subnetwork = google_compute_subnetwork.nyc3_dev_sbx_subnet.self_link
-#   # }
-#   source_machine_image = var.source_machine_image
-#   tags          = ["slng"]
-# }
-
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_udp1" {
+resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_1_e1" {
   provider = google-beta
-  name     = "slng-dev-east1-zb-udp1"
+  name     = "slng-prod-zb-1-e1"
   zone     = var.primary_zones.1
+
   network_interface {
-    subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
+    network_ip = google_compute_address.nyc3_prod_slng_3_e1.address
+    subnetwork = var.syslog_vpc_subnet_self_link_e1
   }
   source_machine_image = var.source_machine_image
   tags                 = ["slng"]
 }
 
-# resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_udp2" {
-#   provider = google-beta
-#   name     = "slng-dev-east1-zb-udp2"
-#   zone     = var.primary_zones.1
-#   # network_interface {
-#   #   subnetwork = google_compute_subnetwork.nyc3_dev_sbx_subnet.self_link
-#   # }
-#   source_machine_image = var.source_machine_image
-#   tags          = ["slng"]
-# }
-
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_udp1" {
+resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_2_e1" {
   provider = google-beta
-  name     = "slng-dev-east1-zc-udp1"
-  zone     = var.primary_zones.2
+  name     = "slng-prod-zb-2-e1"
+  zone     = var.primary_zones.1
+
   network_interface {
-    subnetwork = "projects/nyc3-dev-eds-avalon/regions/us-east1/subnetworks/nyc3-private-us-east1"
+    network_ip = google_compute_address.nyc3_prod_slng_4_e1.address
+    subnetwork = var.syslog_vpc_subnet_self_link_e1
   }
   source_machine_image = var.source_machine_image
   tags                 = ["slng"]
 }
 
-# resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_udp2" {
-#   provider = google-beta
-#   name     = "slng-dev-east1-zc-udp2"
-#   zone     = var.primary_zones.2
-#   # network_interface {
-#   #   subnetwork = google_compute_subnetwork.nyc3_dev_sbx_subnet.self_link
-#   # }
-#   source_machine_image = var.source_machine_image
-#   tags          = ["slng"]
-# }
+resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_1_e1" {
+  provider = google-beta
+  name     = "slng-prod-zc-1-e1"
+  zone     = var.primary_zones.2
+
+  network_interface {
+    network_ip = google_compute_address.nyc3_prod_slng_5_e1.address
+    subnetwork = var.syslog_vpc_subnet_self_link_e1
+  }
+  source_machine_image = var.source_machine_image
+  tags                 = ["slng"]
+}
+
+resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_2_e1" {
+  provider = google-beta
+  name     = "slng-prod-zc-2-e1"
+  zone     = var.primary_zones.2
+
+  network_interface {
+    network_ip = google_compute_address.nyc3_prod_slng_6_e1.address
+    subnetwork = var.syslog_vpc_subnet_self_link_e1
+  }
+  source_machine_image = var.source_machine_image
+  tags                 = ["slng"]
+}
+
+//////////////
+// east 4 Syslog Servers
+//////////////
+
+resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_1_e4" {
+  provider = google-beta
+  name     = "slng-prod-za-1-e4"
+  zone     = var.primary_zones.0
+
+  network_interface {
+    network_ip = google_compute_address.nyc3_prod_slng_1_e4.address
+    subnetwork = var.syslog_vpc_subnet_self_link_e4
+  }
+  source_machine_image = var.source_machine_image
+  tags                 = ["slng"]
+}
+
+resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_2_e4" {
+  provider = google-beta
+  name     = "slng-prod-za-2-e4"
+  zone     = var.primary_zones.0
+
+  network_interface {
+    network_ip = google_compute_address.nyc3_prod_slng_2_e4.address
+    subnetwork = var.syslog_vpc_subnet_self_link_e4
+  }
+  source_machine_image = var.source_machine_image
+  tags                 = ["slng"]
+}
+
+resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_1_e4" {
+  provider = google-beta
+  name     = "slng-prod-zb-1-e4"
+  zone     = var.primary_zones.1
+
+  network_interface {
+    network_ip = google_compute_address.nyc3_prod_slng_3_e4.address
+    subnetwork = var.syslog_vpc_subnet_self_link_e4
+  }
+  source_machine_image = var.source_machine_image
+  tags                 = ["slng"]
+}
+
+resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_2_e4" {
+  provider = google-beta
+  name     = "slng-prod-zb-2-e4"
+  zone     = var.primary_zones.1
+
+  network_interface {
+    network_ip = google_compute_address.nyc3_prod_slng_4_e4.address
+    subnetwork = var.syslog_vpc_subnet_self_link_e4
+  }
+  source_machine_image = var.source_machine_image
+  tags                 = ["slng"]
+}
+
+resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_1_e4" {
+  provider = google-beta
+  name     = "slng-prod-zc-1-e4"
+  zone     = var.primary_zones.2
+
+  network_interface {
+    network_ip = google_compute_address.nyc3_prod_slng_5_e4.address
+    subnetwork = var.syslog_vpc_subnet_self_link_e4
+  }
+  source_machine_image = var.source_machine_image
+  tags                 = ["slng"]
+}
+
+resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_2_e4" {
+  provider = google-beta
+  name     = "slng-prod-zc-2-e4"
+  zone     = var.primary_zones.2
+
+  network_interface {
+    network_ip = google_compute_address.nyc3_prod_slng_6_e4.address
+    subnetwork = var.syslog_vpc_subnet_self_link_e4
+  }
+  source_machine_image = var.source_machine_image
+  tags                 = ["slng"]
+}

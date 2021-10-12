@@ -1,11 +1,17 @@
-vpc_network      = "nyc3-dev-sbx-syslog-vpc"
-vpc_subnet       = "nyc3-dev-sbx-syslog-subnet"
-vpc_subnet_range = "10.10.30.0/24"
+vpc_network_e1      = "nyc3-prod-slng-vpc-e1"
+vpc_subnet_e1       = "slng-10-2-32-128-25"
+vpc_subnet_range_e1 = "10.2.32.128/25"
 
-service_account = "terraform@nyc3-dev-sbx-syslog.iam.gserviceaccount.com"
-num_instances   = 3
-labels          = { env = "dev-sbx", creator = "terraform" }
+vpc_network_e4      = "nyc3-prod-slng-vpc-e4"
+vpc_subnet_e4       = "slng-10-2-33-128-25"
+vpc_subnet_range_e4 = "10.2.33.128/25"
 
+//TODO: Need to see what account this should be.
+service_account = "terraform@nyc3-prod-styx.iam.gserviceaccount.com"
+
+labels = { env = "prod", creator = "terraform" }
+
+//TODO: Need to see what account this should be.
 vm_service_account = {
   email  = "terraform@nyc3-dev-sbx-syslog.iam.gserviceaccount.com"
   scopes = ["cloud-platform"]

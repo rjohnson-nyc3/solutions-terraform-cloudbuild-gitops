@@ -1,11 +1,11 @@
 variable "syslog_project_id" {
   type    = string
-  default = "nyc3-dev-eds-avalon"
+  default = "nyc3-prod-styx"
 }
 
-variable "network_project_id" {
+variable "avi_project_id" {
   type    = string
-  default = "nyc3-dev-hostnetwork"
+  default = "nyc3-prod-hostnetwork"
 }
 
 variable "primary_region" {
@@ -30,49 +30,66 @@ variable "secondary_zones" {
 
 variable "source_machine_image" {
   type = string
-  # default = "projects/nyc3-dev-sbx-syslog/global/machineImages/slng-sbx-machine-image"
+  //TODO: Need to move this to the final resting place
   default = "projects/nyc3-dev-eds-avalon/global/machineImages/slng-vpc-east4-1"
 }
 
 variable "lb_disk_image" {
-  type    = string
+  type = string
+  //TODO: Need to move this to the final resting place
   default = "projects/nyc3-dev-sbx-syslog/global/machineImages/slng-sbx-machine-image"
 }
 
-variable "vpc_network" {
+
+//////////////
+// east 1 
+//////////////
+variable "syslog_vpc_network_e1" { type = string }
+variable "syslog_vpc_subnet_e1" { type = string }
+variable "syslog_vpc_subnet_range_e1" { type = string }
+variable "syslog_vpc_subnet_self_link_e1" {
   type    = string
-  default = "nyc3-dev-sbx-vpc"
+  default = "projects/nyc3-prod-styx/regions/us-east1/subnetworks/slng-10-2-32-128-25"
+}
+variable "avi_vpc_subnet_e1" { type = string }
+variable "avi_vpc_subnet_range_e1" { type = string }
+variable "avi_vpc_subnet_self_link_e1" {
+  type    = string
+  default = "projects/nyc3-prod-hostnetwork/regions/us-east1/subnetworks/avi-10-2-26-128-25-e1"
 }
 
-variable "vpc_subnet" {
-  type    = string
-  default = "nyc3-dev-sbx-subnet"
-}
 
-variable "vpc_subnet_range" {
+//////////////
+// east 4
+//////////////
+variable "syslog_vpc_network_e4" { type = string }
+variable "syslog_vpc_subnet_e4" { type = string }
+variable "syslog_vpc_subnet_range_e4" { type = string }
+variable "syslog_vpc_subnet_self_link_e4" {
   type    = string
-  default = "10.10.30.0/24"
+  default = "projects/nyc3-prod-styx/regions/us-east1/subnetworks/slng-10-2-33-128-25"
+}
+variable "avi_vpc_subnet_e4" { type = string }
+variable "avi_vpc_subnet_range_e4" { type = string }
+variable "avi_vpc_subnet_self_link_e4" {
+  type    = string
+  default = "projects/nyc3-prod-hostnetwork/regions/us-east1/subnetworks/avi-10-2-27-128-25-e4"
 }
 
 variable "service_account" {
   type    = string
-  default = "terraform@nyc3-dev-sbx-syslog.iam.gserviceaccount.com"
+  default = "terraform@nyc3-prod-hyperloop.iam.gserviceaccount.com"
 }
 
 variable "lb_service_account" {
   type    = string
-  default = "avi-dev-service-account@nyc3-dev-hostnetwork.iam.gserviceaccount.com"
-}
-
-variable "num_instances" {
-  type    = number
-  default = 3
+  default = "avi-prod-service-account@nyc3-prod-hostnetwork.iam.gserviceaccount.com"
 }
 
 variable "labels" {
   type = map(any)
   default = {
-    env     = "dev-sbx"
+    env     = "prod"
     creator = "terraform"
   }
 }
