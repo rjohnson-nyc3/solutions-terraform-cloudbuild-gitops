@@ -29,30 +29,43 @@ variable "secondary_zones" {
 }
 
 variable "source_machine_image" {
-  type = string
-  //TODO: Need to move this to the final resting place
-  default = "projects/nyc3-dev-eds-avalon/global/machineImages/slng-vpc-east4-1"
+  type    = string
+  default = "projects/nyc3-prod-styx/global/machineImages/slng-machine-image"
 }
 
 variable "lb_disk_image" {
-  type = string
-  //TODO: Need to move this to the final resting place
-  default = "projects/nyc3-dev-sbx-syslog/global/machineImages/slng-sbx-machine-image"
+  type    = string
+  default = "projects/nyc3-prod-hyperloop/global/images/avi-controller-21-1-1"
 }
 
 
 //////////////
 // east 1 
 //////////////
-variable "syslog_vpc_network_e1" { type = string }
-variable "syslog_vpc_subnet_e1" { type = string }
-variable "syslog_vpc_subnet_range_e1" { type = string }
+variable "syslog_vpc_network_e1" {
+  type    = string
+  default = "nyc3-prod-slng-vpc-e1"
+}
+variable "syslog_vpc_subnet_e1" {
+  type    = string
+  default = "slng-10-2-32-128-25"
+}
+variable "syslog_vpc_subnet_range_e1" {
+  type    = string
+  default = "10.2.32.128/25"
+}
 variable "syslog_vpc_subnet_self_link_e1" {
   type    = string
   default = "projects/nyc3-prod-styx/regions/us-east1/subnetworks/slng-10-2-32-128-25"
 }
-variable "avi_vpc_subnet_e1" { type = string }
-variable "avi_vpc_subnet_range_e1" { type = string }
+variable "avi_vpc_subnet_e1" {
+  type    = string
+  default = "avi-10-2-26-128-25-e1"
+}
+variable "avi_vpc_subnet_range_e1" {
+  type    = string
+  default = "10.2.26.128/25"
+}
 variable "avi_vpc_subnet_self_link_e1" {
   type    = string
   default = "projects/nyc3-prod-hostnetwork/regions/us-east1/subnetworks/avi-10-2-26-128-25-e1"
@@ -62,18 +75,33 @@ variable "avi_vpc_subnet_self_link_e1" {
 //////////////
 // east 4
 //////////////
-variable "syslog_vpc_network_e4" { type = string }
-variable "syslog_vpc_subnet_e4" { type = string }
-variable "syslog_vpc_subnet_range_e4" { type = string }
+variable "syslog_vpc_network_e4" {
+  type    = string
+  default = "nyc3-prod-slng-vpc-e4"
+}
+variable "syslog_vpc_subnet_e4" {
+  type    = string
+  default = "slng-10-2-33-128-25"
+}
+variable "syslog_vpc_subnet_range_e4" {
+  type    = string
+  default = "10.2.33.128/25"
+}
 variable "syslog_vpc_subnet_self_link_e4" {
   type    = string
-  default = "projects/nyc3-prod-styx/regions/us-east1/subnetworks/slng-10-2-33-128-25"
+  default = "projects/nyc3-prod-styx/regions/us-east4/subnetworks/slng-10-2-33-128-25"
 }
-variable "avi_vpc_subnet_e4" { type = string }
-variable "avi_vpc_subnet_range_e4" { type = string }
+variable "avi_vpc_subnet_e4" {
+  type    = string
+  default = "avi-10-2-27-128-25-e4"
+}
+variable "avi_vpc_subnet_range_e4" {
+  type    = string
+  default = "10.2.27.128/25"
+}
 variable "avi_vpc_subnet_self_link_e4" {
   type    = string
-  default = "projects/nyc3-prod-hostnetwork/regions/us-east1/subnetworks/avi-10-2-27-128-25-e4"
+  default = "projects/nyc3-prod-hostnetwork/regions/us-east4/subnetworks/avi-10-2-27-128-25-e4"
 }
 
 variable "service_account" {

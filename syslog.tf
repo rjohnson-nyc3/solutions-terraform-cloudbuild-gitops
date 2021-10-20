@@ -2,9 +2,9 @@
 // east 1 Syslog Servers
 //////////////
 
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_1_e1" {
+resource "google_compute_instance_from_machine_image" "slng_prod_zd_1_e1" {
   provider = google-beta
-  name     = "slng-prod-za-1-e1"
+  name     = "slng-prod-zd-1-e1"
   zone     = var.primary_zones.0
 
   network_interface {
@@ -15,9 +15,9 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_1_e1" {
   tags                 = ["slng"]
 }
 
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_2_e1" {
+resource "google_compute_instance_from_machine_image" "slng_prod_zd_2_e1" {
   provider = google-beta
-  name     = "slng-prod-za-2-e1"
+  name     = "slng-prod-zd-2-e1"
   zone     = var.primary_zones.0
 
   network_interface {
@@ -28,9 +28,9 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_2_e1" {
   tags                 = ["slng"]
 }
 
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_1_e1" {
+resource "google_compute_instance_from_machine_image" "slng_prod_zc_1_e1" {
   provider = google-beta
-  name     = "slng-prod-zb-1-e1"
+  name     = "slng-prod-zc-1-e1"
   zone     = var.primary_zones.1
 
   network_interface {
@@ -41,9 +41,9 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_1_e1" {
   tags                 = ["slng"]
 }
 
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_2_e1" {
+resource "google_compute_instance_from_machine_image" "slng_prod_zc_2_e1" {
   provider = google-beta
-  name     = "slng-prod-zb-2-e1"
+  name     = "slng-prod-zc-2-e1"
   zone     = var.primary_zones.1
 
   network_interface {
@@ -54,9 +54,9 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_2_e1" {
   tags                 = ["slng"]
 }
 
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_1_e1" {
+resource "google_compute_instance_from_machine_image" "slng_prod_zb_1_e1" {
   provider = google-beta
-  name     = "slng-prod-zc-1-e1"
+  name     = "slng-prod-zb-1-e1"
   zone     = var.primary_zones.2
 
   network_interface {
@@ -67,9 +67,9 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_1_e1" {
   tags                 = ["slng"]
 }
 
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_2_e1" {
+resource "google_compute_instance_from_machine_image" "slng_prod_zb_2_e1" {
   provider = google-beta
-  name     = "slng-prod-zc-2-e1"
+  name     = "slng-prod-zb-2-e1"
   zone     = var.primary_zones.2
 
   network_interface {
@@ -84,10 +84,10 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_2_e1" {
 // east 4 Syslog Servers
 //////////////
 
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_1_e4" {
+resource "google_compute_instance_from_machine_image" "slng_prod_zc_1_e4" {
   provider = google-beta
-  name     = "slng-prod-za-1-e4"
-  zone     = var.primary_zones.0
+  name     = "slng-prod-zc-1-e4"
+  zone     = var.secondary_zones.0
 
   network_interface {
     network_ip = google_compute_address.nyc3_prod_slng_1_e4.address
@@ -97,10 +97,10 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_1_e4" {
   tags                 = ["slng"]
 }
 
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_2_e4" {
+resource "google_compute_instance_from_machine_image" "slng_prod_zc_2_e4" {
   provider = google-beta
-  name     = "slng-prod-za-2-e4"
-  zone     = var.primary_zones.0
+  name     = "slng-prod-zc-2-e4"
+  zone     = var.secondary_zones.0
 
   network_interface {
     network_ip = google_compute_address.nyc3_prod_slng_2_e4.address
@@ -110,10 +110,10 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_za_2_e4" {
   tags                 = ["slng"]
 }
 
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_1_e4" {
+resource "google_compute_instance_from_machine_image" "slng_prod_zb_1_e4" {
   provider = google-beta
   name     = "slng-prod-zb-1-e4"
-  zone     = var.primary_zones.1
+  zone     = var.secondary_zones.1
 
   network_interface {
     network_ip = google_compute_address.nyc3_prod_slng_3_e4.address
@@ -123,10 +123,10 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_1_e4" {
   tags                 = ["slng"]
 }
 
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_2_e4" {
+resource "google_compute_instance_from_machine_image" "slng_prod_zb_2_e4" {
   provider = google-beta
   name     = "slng-prod-zb-2-e4"
-  zone     = var.primary_zones.1
+  zone     = var.secondary_zones.1
 
   network_interface {
     network_ip = google_compute_address.nyc3_prod_slng_4_e4.address
@@ -136,10 +136,10 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zb_2_e4" {
   tags                 = ["slng"]
 }
 
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_1_e4" {
+resource "google_compute_instance_from_machine_image" "slng_prod_za_1_e4" {
   provider = google-beta
-  name     = "slng-prod-zc-1-e4"
-  zone     = var.primary_zones.2
+  name     = "slng-prod-za-1-e4"
+  zone     = var.secondary_zones.2
 
   network_interface {
     network_ip = google_compute_address.nyc3_prod_slng_5_e4.address
@@ -149,10 +149,10 @@ resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_1_e4" {
   tags                 = ["slng"]
 }
 
-resource "google_compute_instance_from_machine_image" "slng_dev_east1_zc_2_e4" {
+resource "google_compute_instance_from_machine_image" "slng_prod_za_2_e4" {
   provider = google-beta
-  name     = "slng-prod-zc-2-e4"
-  zone     = var.primary_zones.2
+  name     = "slng-prod-za-2-e4"
+  zone     = var.secondary_zones.2
 
   network_interface {
     network_ip = google_compute_address.nyc3_prod_slng_6_e4.address

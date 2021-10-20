@@ -1,12 +1,12 @@
 //////////////
 // east 1 Load Balancers
 //////////////
-resource "google_compute_instance" "nyc3_dev_avi_lb_controller_1_e1" {
+resource "google_compute_instance" "nyc3_prod_avi_ctrl_zd_1_e1" {
 
   //TODO: Probably should remove the following at some point.
   allow_stopping_for_update = true
   project                   = var.avi_project_id
-  name                      = "nyc3-dev-avi-lb-controller-1-e1"
+  name                      = "nyc3-prod-avi-ctrl-zd-1-e1"
   machine_type              = "e2-highmem-8"
   zone                      = var.primary_zones.0
 
@@ -29,12 +29,12 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_1_e1" {
   }
 }
 
-resource "google_compute_instance" "nyc3_dev_avi_lb_controller_2_e1" {
+resource "google_compute_instance" "nyc3_prod_avi_ctrl_zc_2_e1" {
 
   //TODO: Probably should remove the following at some point.
   allow_stopping_for_update = true
   project                   = var.avi_project_id
-  name                      = "nyc3-dev-avi-lb-controller-2-e1"
+  name                      = "nyc3-prod-avi-ctrl-zc-2-e1"
   machine_type              = "e2-highmem-8"
   zone                      = var.primary_zones.1
 
@@ -57,12 +57,12 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_2_e1" {
   }
 }
 
-resource "google_compute_instance" "nyc3_dev_avi_lb_controller_3_e1" {
+resource "google_compute_instance" "nyc3_prod_avi_ctrl_zb_3_e1" {
 
   //TODO: Probably should remove the following at some point.
   allow_stopping_for_update = true
   project                   = var.avi_project_id
-  name                      = "nyc3-dev-avi-lb-controller-3-e1"
+  name                      = "nyc3-prod-avi-ctrl-zb-3-e1"
   machine_type              = "e2-highmem-8"
   zone                      = var.primary_zones.2
 
@@ -89,14 +89,14 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_3_e1" {
 //////////////
 // east 4 Load Balancers
 //////////////
-resource "google_compute_instance" "nyc3_dev_avi_lb_controller_1_e4" {
+resource "google_compute_instance" "nyc3_prod_avi_ctrl_zc_1_e4" {
 
   //TODO: Probably should remove the following at some point.
   allow_stopping_for_update = true
   project                   = var.avi_project_id
-  name                      = "nyc3-dev-avi-lb-controller-1-e4"
+  name                      = "nyc3-prod-avi-ctrl-zc-1-e4"
   machine_type              = "e2-highmem-8"
-  zone                      = var.primary_zones.0
+  zone                      = var.secondary_zones.0
 
   boot_disk {
     initialize_params {
@@ -117,14 +117,14 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_1_e4" {
   }
 }
 
-resource "google_compute_instance" "nyc3_dev_avi_lb_controller_2_e4" {
+resource "google_compute_instance" "nyc3_prod_avi_ctrl_zb_2_e4" {
 
   //TODO: Probably should remove the following at some point.
   allow_stopping_for_update = true
   project                   = var.avi_project_id
-  name                      = "nyc3-dev-avi-lb-controller-2-e4"
+  name                      = "nyc3-prod-avi-ctrl-zb-2-e4"
   machine_type              = "e2-highmem-8"
-  zone                      = var.primary_zones.1
+  zone                      = var.secondary_zones.1
 
   boot_disk {
     initialize_params {
@@ -145,14 +145,14 @@ resource "google_compute_instance" "nyc3_dev_avi_lb_controller_2_e4" {
   }
 }
 
-resource "google_compute_instance" "nyc3_dev_avi_lb_controller_3_e4" {
+resource "google_compute_instance" "nyc3_prod_avi_ctrl_za_3_e4" {
 
   //TODO: Probably should remove the following at some point.
   allow_stopping_for_update = true
   project                   = var.avi_project_id
-  name                      = "nyc3-dev-avi-lb-controller-3-e4"
+  name                      = "nyc3-prod-avi-ctrl-za-3-e4"
   machine_type              = "e2-highmem-8"
-  zone                      = var.primary_zones.2
+  zone                      = var.secondary_zones.2
 
   boot_disk {
     initialize_params {
