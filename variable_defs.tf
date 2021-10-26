@@ -35,7 +35,7 @@ variable "source_machine_image" {
 
 variable "lb_disk_image" {
   type    = string
-  default = "projects/nyc3-prod-hyperloop/global/images/avi-controller-21-1-1"
+  default = "projects/nyc3-prod-hyperloop/global/images/avi-controller-21-1-2"
 }
 
 

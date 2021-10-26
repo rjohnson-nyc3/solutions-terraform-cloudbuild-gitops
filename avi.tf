@@ -141,6 +141,7 @@ resource "google_compute_instance" "nyc3_prod_avi_ctrl_zb_2_e4" {
 
   service_account {
     email  = var.lb_service_account
+    //FIXME: need to updated correct scope limit it to the compute engine read/write
     scopes = ["cloud-platform"]
   }
 }
