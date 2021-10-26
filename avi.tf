@@ -1,8 +1,9 @@
 //////////////
 // east 1 Load Balancers
 //////////////
-resource "google_compute_instance" "nyc3_prod_avi_ctrl_zd_1_e1" {
 
+//TODO: Remove 'nyc3_ and nyc3-'
+resource "google_compute_instance" "nyc3_prod_avi_ctrl_zd_1_e1" {
   //TODO: Probably should remove the following at some point.
   allow_stopping_for_update = true
   project                   = var.avi_project_id
@@ -29,8 +30,8 @@ resource "google_compute_instance" "nyc3_prod_avi_ctrl_zd_1_e1" {
   }
 }
 
+//TODO: Remove 'nyc3_ and nyc3-'
 resource "google_compute_instance" "nyc3_prod_avi_ctrl_zc_2_e1" {
-
   //TODO: Probably should remove the following at some point.
   allow_stopping_for_update = true
   project                   = var.avi_project_id
@@ -57,8 +58,8 @@ resource "google_compute_instance" "nyc3_prod_avi_ctrl_zc_2_e1" {
   }
 }
 
+//TODO: Remove 'nyc3_ and nyc3-'
 resource "google_compute_instance" "nyc3_prod_avi_ctrl_zb_3_e1" {
-
   //TODO: Probably should remove the following at some point.
   allow_stopping_for_update = true
   project                   = var.avi_project_id
@@ -89,8 +90,9 @@ resource "google_compute_instance" "nyc3_prod_avi_ctrl_zb_3_e1" {
 //////////////
 // east 4 Load Balancers
 //////////////
-resource "google_compute_instance" "nyc3_prod_avi_ctrl_zc_1_e4" {
 
+//TODO: Remove 'nyc3_ and nyc3-'
+resource "google_compute_instance" "nyc3_prod_avi_ctrl_zc_1_e4" {
   //TODO: Probably should remove the following at some point.
   allow_stopping_for_update = true
   project                   = var.avi_project_id
@@ -117,8 +119,8 @@ resource "google_compute_instance" "nyc3_prod_avi_ctrl_zc_1_e4" {
   }
 }
 
+//TODO: Remove 'nyc3_ and nyc3-'
 resource "google_compute_instance" "nyc3_prod_avi_ctrl_zb_2_e4" {
-
   //TODO: Probably should remove the following at some point.
   allow_stopping_for_update = true
   project                   = var.avi_project_id
@@ -146,8 +148,8 @@ resource "google_compute_instance" "nyc3_prod_avi_ctrl_zb_2_e4" {
   }
 }
 
+//TODO: Remove 'nyc3_ and nyc3-'
 resource "google_compute_instance" "nyc3_prod_avi_ctrl_za_3_e4" {
-
   //TODO: Probably should remove the following at some point.
   allow_stopping_for_update = true
   project                   = var.avi_project_id

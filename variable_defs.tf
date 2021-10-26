@@ -104,10 +104,10 @@ variable "avi_vpc_subnet_self_link_e4" {
   default = "projects/nyc3-prod-hostnetwork/regions/us-east4/subnetworks/avi-10-2-27-128-25-e4"
 }
 
-variable "service_account" {
-  type    = string
-  default = "terraform@nyc3-prod-hyperloop.iam.gserviceaccount.com"
-}
+# variable "service_account" {
+#   type    = string
+#   default = "terraform@nyc3-prod-hyperloop.iam.gserviceaccount.com"
+# }
 
 variable "lb_service_account" {
   type    = string
@@ -122,11 +122,11 @@ variable "labels" {
   }
 }
 
-variable "vm_service_account" {
-  default = null
-  type = object({
-    email  = string
-    scopes = set(string)
-  })
-  description = "Service account to attach to the instance. See https://www.terraform.io/docs/providers/google/r/compute_instance_template.html#service_account."
-}
+# variable "vm_service_account" {
+#   default = null
+#   type = object({
+#     email  = string
+#     scopes = set(string)
+#   })
+#   description = "Service account to attach to the instance. See https://www.terraform.io/docs/providers/google/r/compute_instance_template.html#service_account."
+# }
