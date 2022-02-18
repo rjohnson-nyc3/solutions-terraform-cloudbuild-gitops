@@ -81,30 +81,31 @@ resource "google_compute_address" "nyc3_prod_slng_6_e1" {
   region       = var.primary_region
 }
 
-# resource "google_compute_address" "nyc3_prod_slng_7_e1" {
-#   name         = "nyc3-prod-slng-7-e1"
-#   project      = var.syslog_project_id
-#   subnetwork   = var.syslog_vpc_subnet_e1
-#   address_type = "INTERNAL"
-#   address      = "10.2.32.136"
-#   region       = var.primary_region
-# }
-# resource "google_compute_address" "nyc3_prod_slng_8_e1" {
-#   name         = "nyc3-prod-slng-8-e1"
-#   project      = var.syslog_project_id
-#   subnetwork   = var.syslog_vpc_subnet_e1
-#   address_type = "INTERNAL"
-#   address      = "10.2.32.137"
-#   region       = var.primary_region
-# }
-# resource "google_compute_address" "nyc3_prod_slng_9_e1" {
-#   name         = "nyc3-prod-slng-9-e1"
-#   project      = var.syslog_project_id
-#   subnetwork   = var.syslog_vpc_subnet_e1
-#   address_type = "INTERNAL"
-#   address      = "10.2.32.138"
-#   region       = var.primary_region
-# }
+resource "google_compute_address" "nyc3_prod_slng_7_e1" {
+  name         = "nyc3-prod-slng-7-e1"
+  project      = var.syslog_project_id
+  subnetwork   = var.syslog_vpc_subnet_e1
+  address_type = "INTERNAL"
+  address      = "10.2.32.136"
+  region       = var.primary_region
+}
+resource "google_compute_address" "nyc3_prod_slng_8_e1" {
+  name         = "nyc3-prod-slng-8-e1"
+  project      = var.syslog_project_id
+  subnetwork   = var.syslog_vpc_subnet_e1
+  address_type = "INTERNAL"
+  address      = "10.2.32.137"
+  region       = var.primary_region
+}
+resource "google_compute_address" "nyc3_prod_slng_9_e1" {
+  name         = "nyc3-prod-slng-9-e1"
+  project      = var.syslog_project_id
+  subnetwork   = var.syslog_vpc_subnet_e1
+  address_type = "INTERNAL"
+  address      = "10.2.32.138"
+  region       = var.primary_region
+}
+
 # resource "google_compute_address" "nyc3_prod_slng_10_e1" {
 #   name         = "nyc3-prod-slng-10-e1"
 #   project      = var.syslog_project_id
@@ -195,30 +196,30 @@ resource "google_compute_address" "nyc3_prod_slng_6_e4" {
   address      = "10.2.33.135"
   region       = var.secondary_region
 }
-# resource "google_compute_address" "nyc3_prod_slng_7_e4" {
-#   name         = "nyc3-prod-slng-7-e4"
-#   project      = var.syslog_project_id
-#   subnetwork   = var.syslog_vpc_subnet_e4
-#   address_type = "INTERNAL"
-#   address      = "10.2.33.136"
-#   region       = var.secondary_region
-# }
-# resource "google_compute_address" "nyc3_prod_slng_8_e4" {
-#   name         = "nyc3-prod-slng-8-e4"
-#   project      = var.syslog_project_id
-#   subnetwork   = var.syslog_vpc_subnet_e4
-#   address_type = "INTERNAL"
-#   address      = "10.2.33.137"
-#   region       = var.secondary_region
-# }
-# resource "google_compute_address" "nyc3_prod_slng_9_e4" {
-#   name         = "nyc3-prod-slng-9-e4"
-#   project      = var.syslog_project_id
-#   subnetwork   = var.syslog_vpc_subnet_e4
-#   address_type = "INTERNAL"
-#   address      = "10.2.33.138"
-#   region       = var.secondary_region
-# }
+resource "google_compute_address" "nyc3_prod_slng_7_e4" {
+  name         = "nyc3-prod-slng-7-e4"
+  project      = var.syslog_project_id
+  subnetwork   = var.syslog_vpc_subnet_e4
+  address_type = "INTERNAL"
+  address      = "10.2.33.136"
+  region       = var.secondary_region
+}
+resource "google_compute_address" "nyc3_prod_slng_8_e4" {
+  name         = "nyc3-prod-slng-8-e4"
+  project      = var.syslog_project_id
+  subnetwork   = var.syslog_vpc_subnet_e4
+  address_type = "INTERNAL"
+  address      = "10.2.33.137"
+  region       = var.secondary_region
+}
+resource "google_compute_address" "nyc3_prod_slng_9_e4" {
+  name         = "nyc3-prod-slng-9-e4"
+  project      = var.syslog_project_id
+  subnetwork   = var.syslog_vpc_subnet_e4
+  address_type = "INTERNAL"
+  address      = "10.2.33.138"
+  region       = var.secondary_region
+}
 # resource "google_compute_address" "nyc3_prod_slng_10_e4" {
 #   name         = "nyc3-prod-slng-10-e4"
 #   project      = var.syslog_project_id

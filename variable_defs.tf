@@ -33,6 +33,13 @@ variable "source_machine_image" {
   default = "projects/nyc3-prod-styx/global/machineImages/slng-machine-image"
 }
 
+variable "source_machine_image_7027_16" {
+  type    = string
+  default = "projects/nyc3-prod-styx/zones/us-east1-d/disks/slng-machine-image-rhel8-7027-16"
+}
+
+
+
 variable "lb_disk_image" {
   type    = string
   default = "projects/nyc3-prod-hyperloop/global/images/avi-controller-21-1-2"

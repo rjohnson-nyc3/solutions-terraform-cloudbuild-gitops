@@ -23,9 +23,9 @@ resource "google_compute_instance" "nyc3_prod_avi_ctrl_zd_1_e1" {
     subnetwork = var.avi_vpc_subnet_self_link_e1
     network_ip = google_compute_address.nyc3_prod_avi_ctrl_1_e1.address
     //FIXME: This IP floats between controllers need to be accounted for (outside of terraform)
-    alias_ip_range {
-      ip_cidr_range = "10.2.26.130/32"
-    }
+    # alias_ip_range {
+    #   ip_cidr_range = "10.2.26.130/32"
+    # }
   }
 
   service_account {
@@ -116,9 +116,9 @@ resource "google_compute_instance" "nyc3_prod_avi_ctrl_zc_1_e4" {
     subnetwork = var.avi_vpc_subnet_self_link_e4
     network_ip = google_compute_address.nyc3_prod_avi_ctrl_1_e4.address
     //FIXME: This IP floats between controllers need to be accounted for (outside of terraform)
-    alias_ip_range {
-      ip_cidr_range = "10.2.27.130/32"
-    }
+    # alias_ip_range {
+    #   ip_cidr_range = "10.2.27.130/32"
+    # }
   }
 
   service_account {
