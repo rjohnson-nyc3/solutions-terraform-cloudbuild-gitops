@@ -1,7 +1,7 @@
 # resource "google_compute_router" "nyc3_80ml_rtr_e1" {
 #   name    = "nyc3-80ml-rtr-e1"
 #   project = var.avi_project_id
-#   network = "projects/nyc3-prod-hostnetwork/global/networks/nyc3-prod-hub-vpc-e1"
+#   network = "projects/nyc3-dev-hostnetwork/global/networks/nyc3-dev-hub-vpc-e1"
 #   bgp {
 #     asn            = 64514
 #     advertise_mode = "CUSTOM"

@@ -1,11 +1,11 @@
 variable "syslog_project_id" {
   type    = string
-  default = "nyc3-prod-styx"
+  default = "nyc3-dev-styx"
 }
 
 variable "avi_project_id" {
   type    = string
-  default = "nyc3-prod-hostnetwork"
+  default = "nyc3-dev-hostnetwork"
 }
 
 variable "primary_region" {
@@ -30,19 +30,19 @@ variable "secondary_zones" {
 
 variable "source_machine_image" {
   type    = string
-  default = "projects/nyc3-prod-styx/global/machineImages/slng-machine-image"
+  default = "projects/nyc3-dev-styx/global/machineImages/slng-machine-image"
 }
 
 variable "source_machine_image_7027_16" {
   type    = string
-  default = "projects/nyc3-prod-styx/zones/us-east1-d/disks/slng-machine-image-rhel8-7027-16"
+  default = "projects/nyc3-dev-styx/zones/us-east1-d/disks/slng-machine-image-rhel8-7027-16"
 }
 
 
 
 variable "lb_disk_image" {
   type    = string
-  default = "projects/nyc3-prod-hyperloop/global/images/avi-controller-21-1-2"
+  default = "projects/nyc3-dev-hyperloop/global/images/avi-controller-21-1-2"
 }
 
 
@@ -51,7 +51,7 @@ variable "lb_disk_image" {
 //////////////
 variable "syslog_vpc_network_e1" {
   type    = string
-  default = "nyc3-prod-slng-vpc-e1"
+  default = "nyc3-dev-slng-vpc-e1"
 }
 variable "syslog_vpc_subnet_e1" {
   type    = string
@@ -63,7 +63,7 @@ variable "syslog_vpc_subnet_range_e1" {
 }
 variable "syslog_vpc_subnet_self_link_e1" {
   type    = string
-  default = "projects/nyc3-prod-styx/regions/us-east1/subnetworks/slng-10-2-32-128-25"
+  default = "projects/nyc3-dev-styx/regions/us-east1/subnetworks/slng-10-2-32-128-25"
 }
 variable "avi_vpc_subnet_e1" {
   type    = string
@@ -75,7 +75,7 @@ variable "avi_vpc_subnet_range_e1" {
 }
 variable "avi_vpc_subnet_self_link_e1" {
   type    = string
-  default = "projects/nyc3-prod-hostnetwork/regions/us-east1/subnetworks/avi-10-2-26-128-25-e1"
+  default = "projects/nyc3-dev-hostnetwork/regions/us-east1/subnetworks/avi-10-2-26-128-25-e1"
 }
 
 
@@ -84,7 +84,7 @@ variable "avi_vpc_subnet_self_link_e1" {
 //////////////
 variable "syslog_vpc_network_e4" {
   type    = string
-  default = "nyc3-prod-slng-vpc-e4"
+  default = "nyc3-dev-slng-vpc-e4"
 }
 variable "syslog_vpc_subnet_e4" {
   type    = string
@@ -96,7 +96,7 @@ variable "syslog_vpc_subnet_range_e4" {
 }
 variable "syslog_vpc_subnet_self_link_e4" {
   type    = string
-  default = "projects/nyc3-prod-styx/regions/us-east4/subnetworks/slng-10-2-33-128-25"
+  default = "projects/nyc3-dev-styx/regions/us-east4/subnetworks/slng-10-2-33-128-25"
 }
 variable "avi_vpc_subnet_e4" {
   type    = string
@@ -108,23 +108,23 @@ variable "avi_vpc_subnet_range_e4" {
 }
 variable "avi_vpc_subnet_self_link_e4" {
   type    = string
-  default = "projects/nyc3-prod-hostnetwork/regions/us-east4/subnetworks/avi-10-2-27-128-25-e4"
+  default = "projects/nyc3-dev-hostnetwork/regions/us-east4/subnetworks/avi-10-2-27-128-25-e4"
 }
 
 # variable "service_account" {
 #   type    = string
-#   default = "terraform@nyc3-prod-hyperloop.iam.gserviceaccount.com"
+#   default = "terraform@nyc3-dev-hyperloop.iam.gserviceaccount.com"
 # }
 
 variable "lb_service_account" {
   type    = string
-  default = "avi-prod-service-account@nyc3-prod-hostnetwork.iam.gserviceaccount.com"
+  default = "avi-dev-service-account@nyc3-dev-hostnetwork.iam.gserviceaccount.com"
 }
 
 variable "labels" {
   type = map(any)
   default = {
-    env     = "prod"
+    env     = "dev"
     creator = "terraform"
   }
 }

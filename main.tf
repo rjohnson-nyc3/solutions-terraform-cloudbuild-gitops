@@ -1,7 +1,7 @@
 terraform {
   # required_version = ">= 0.14"
   backend "gcs" {
-    bucket = "nyc3-prod-hyperloop-artifacts"
+    bucket = "nyc3-dev-hyperloop-artifacts"
     prefix = "terraform/org/state"
   }
 }
