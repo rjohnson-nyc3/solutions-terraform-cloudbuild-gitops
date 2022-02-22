@@ -30,11 +30,13 @@ variable "secondary_zones" {
 
 variable "source_machine_image" {
   type    = string
+  //todo copy (Create) image from prod into dev
   default = "projects/nyc3-dev-styx/global/machineImages/slng-machine-image"
 }
 
 variable "source_machine_image_7027_16" {
   type    = string
+  //todo copy (create image from prod into dev)
   default = "projects/nyc3-dev-styx/zones/us-east1-d/disks/slng-machine-image-rhel8-7027-16"
 }
 
@@ -42,6 +44,7 @@ variable "source_machine_image_7027_16" {
 
 variable "lb_disk_image" {
   type    = string
+  //todo copy (Create image from prod into dev)
   default = "projects/nyc3-dev-hyperloop/global/images/avi-controller-21-1-2"
 }
 
@@ -49,6 +52,8 @@ variable "lb_disk_image" {
 //////////////
 // east 1 
 //////////////
+
+//todo change all vpc/subnet to dev items based on spreadsheet
 variable "syslog_vpc_network_e1" {
   type    = string
   default = "nyc3-dev-slng-vpc-e1"
@@ -111,6 +116,7 @@ variable "avi_vpc_subnet_self_link_e4" {
   default = "projects/nyc3-dev-hostnetwork/regions/us-east4/subnetworks/avi-10-2-27-128-25-e4"
 }
 
+//todo check to see if I need this.
 # variable "service_account" {
 #   type    = string
 #   default = "terraform@nyc3-dev-hyperloop.iam.gserviceaccount.com"

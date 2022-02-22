@@ -1,3 +1,5 @@
+## Feature isn't used right now, but possibly in the future.
+
 # resource "google_compute_instance_group" "slng_east1_za_tcp" {
 #   name        = "slng-east1-za-tcp"
 #   description = "Terraform test instance group"
