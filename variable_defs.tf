@@ -29,13 +29,13 @@ variable "secondary_zones" {
 }
 
 variable "source_machine_image" {
-  type    = string
+  type = string
   //todo copy (Create) image from prod into dev
   default = "projects/nyc3-dev-styx/global/machineImages/slng-machine-image"
 }
 
 variable "source_machine_image_7027_16" {
-  type    = string
+  type = string
   //todo copy (create image from prod into dev)
   default = "projects/nyc3-dev-styx/zones/us-east1-d/disks/slng-machine-image-rhel8-7027-16"
 }
@@ -43,7 +43,7 @@ variable "source_machine_image_7027_16" {
 
 
 variable "lb_disk_image" {
-  type    = string
+  type = string
   //todo copy (Create image from prod into dev)
   default = "projects/nyc3-dev-hyperloop/global/images/avi-controller-21-1-2"
 }
