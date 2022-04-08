@@ -24,6 +24,7 @@ resource "google_compute_firewall" "allow_ssh_ingress_via_iap_to_edge_e1" {
 
 resource "google_compute_firewall" "allow_ssh_ingress_via_iap_to_hub_e1" {
   name = "allow-ssh-ingress-via-iap-to-hub-e1"
+  //todo Replace with the correct network link
   # network   = google_compute_network.nyc3_dev_vpc.self_link
   direction = "INGRESS"
 
@@ -54,7 +55,7 @@ resource "google_compute_firewall" "avi_controller_and_se_e1" {
 
   allow {
     protocol = "udp"
-    ports    = ["123", "1550", "514", "514", "514", "514", "514", "514", "514"]
+    ports    = ["123", "1550"]
   }
 
   allow {
@@ -127,7 +128,7 @@ resource "google_compute_firewall" "avi_controller_and_se_e4" {
 
   allow {
     protocol = "udp"
-    ports    = ["123", "1550", "514", "514", "514", "514", "514", "514", "514"]
+    ports    = ["123", "1550"]
   }
 
   allow {
