@@ -40,8 +40,6 @@ variable "source_machine_image_7027_16" {
   default = "projects/nyc3-dev-styx/zones/us-east1-d/disks/slng-machine-image-rhel8-7027-16"
 }
 
-
-
 variable "lb_disk_image" {
   type = string
   //todo copy (Create image from prod into dev)
